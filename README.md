@@ -106,6 +106,27 @@ svelte-todo/
 
 Feel free to fork this project and submit pull requests for any improvements.
 
+## GitHub Pages Deployment
+
+To enable GitHub Pages for this project:
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under **Source**, select **GitHub Actions**
+4. The workflow will automatically deploy on the next push to main branch
+5. Your app will be available at: `https://[your-username].github.io/svelte-todo/`
+
+The deployment workflow runs automatically whenever you push to the main/master branch.
+
+## Dark/Light Theme
+
+The app includes an elegant dark/light theme toggle:
+- **Animated toggle button** in the top-right corner
+- **Automatic persistence** - your preference is saved in localStorage
+- **System preference detection** - defaults to your OS theme preference
+- **Smooth transitions** between themes
+- **Full dark mode support** across all components
+
 ## License
 
 MIT
