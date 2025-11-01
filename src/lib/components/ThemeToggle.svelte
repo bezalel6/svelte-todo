@@ -2,11 +2,20 @@
 	import { theme } from '$lib/stores/theme';
 	import { scale, fade } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
+	import { get } from 'svelte/store';
 
 	let currentTheme = $state<'light' | 'dark'>('light');
 
+	// Subscribe to theme store changes
 	$effect(() => {
-		currentTheme = $theme;
+		const unsubscribe = theme.subscribe(value => {
+			currentTheme = value;
+		});
+
+		// Set initial value
+		currentTheme = get(theme);
+
+		return unsubscribe;
 	});
 
 	function handleToggle() {
